@@ -9,5 +9,4 @@ public class CrudAlunoSpringbootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CrudAlunoSpringbootApplication.class, args);
 	}
-
 }
