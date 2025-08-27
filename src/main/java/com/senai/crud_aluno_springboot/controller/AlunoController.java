@@ -6,12 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/aluno")
 public class AlunoController {
-    @RestController
-    @RequestMapping("/aluno")
-    public class ProductController {
-
         @Autowired
         private AlunoRepository alunoRepository;
 
@@ -32,7 +29,7 @@ public class AlunoController {
                     .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
         }
 
-        /* Método para atualizar um aluno
+        // Método para atualizar um aluno
         @PutMapping("/{id}")
         public Aluno updateAluno(@PathVariable String id, @RequestBody Aluno alunotDetails) {
             Aluno aluno = alunoRepository.findById(id)
@@ -41,11 +38,11 @@ public class AlunoController {
             aluno.setNome(alunotDetails.getNome());
 
             return alunoRepository.save(aluno);
-        }*/
+        }
 
         @DeleteMapping("/{id}")
         public void deleteProduct(@PathVariable String id) {
             alunoRepository.deleteById(id);
         }
     }
-}
+
